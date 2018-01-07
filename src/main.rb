@@ -1,4 +1,4 @@
-require 'Thor'
+require 'thor'
 
 class JwelboxCLI < Thor
   # partial definition

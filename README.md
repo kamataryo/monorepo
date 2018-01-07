@@ -19,7 +19,7 @@ Create a new Jwelbox repo.
 
 ## `jwelbox bootstrap`
 
-Bootstrap the pckages in the current Jwelbox repo.
+Bootstrap the packages in the current Jwelbox repo.
 
 ## `jwelbox exec`
 

@@ -1,3 +1,4 @@
+require 'bundler/setup'
 require 'Thor'
 
 class JwelboxCLI < Thor

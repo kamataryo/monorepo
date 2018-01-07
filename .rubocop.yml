@@ -9,3 +9,6 @@ Metrix/BlockLength:
 
 Metrix/MethodLength:
   Enabled: false
+
+Metrics/AbcSize:
+  Enabled: false

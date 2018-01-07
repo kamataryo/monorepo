@@ -1,5 +1,3 @@
-require 'yaml'
-
 class JwelboxCLI
   desc 'init', 'init jwelbox repo'
   method_option :gems, aliases: '-g'

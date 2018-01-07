@@ -21,7 +21,6 @@ class JwelboxCLI < Thor
     config_filenames.each do |config_filename|
       if File.exist?(config_filename)
         config = YAML.load_file(config_filename)
-        puts config
         return config
       end
     end

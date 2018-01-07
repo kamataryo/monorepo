@@ -1,4 +1,4 @@
-# jwelbox
+# Jwelbox
 
 Ruby based monolepo management tool like [Lerna](https://lernajs.io/).
 
@@ -10,3 +10,17 @@ $ cd jwelbox
 $ bundle install
 $ ./bin/jwelbox
 ```
+
+# Commands
+
+## `jwelbox init`
+
+Create a new Jwelbox repo.
+
+## `jwelbox bootstrap`
+
+Bootstrap the pckages in the current Jwelbox repo.
+
+## `jwelbox exec`
+
+Exec commands in each package.

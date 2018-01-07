@@ -1,14 +1,9 @@
 require 'Thor'
 
-class MyCLI < Thor
-  desc 'hello NAME', 'say hello to NAME'
-  def hello name
-    puts "Hello #{name}"
-  end
-  
-  desc 'hello2 NAME', 'say hello to NAME twice'
-  def hello2 name
-    puts  "Hello #{name}"
-    puts  "Hello #{name}"
-  end
+class JwelboxCLI < Thor
+  # partial definition
 end
+
+require_relative './commands/init'
+require_relative './commands/bootstrap'
+require_relative './commands/run'

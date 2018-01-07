@@ -1,4 +1,4 @@
 #! /usr/bin/env ruby
 
 require_relative '../src/main'
-MyCLI.start(ARGV)
+JwelboxCLI.start(ARGV)

@@ -1,14 +1,9 @@
 require 'spec_helper'
 require 'tmpdir'
 require 'fileutils'
-require 'thor'
 require 'yaml'
 
-class JwelboxCLI < Thor
-  # accept partial definition and isolate testing subcommands
-end
-
-require './src/commands/init'
+require './src/main'
 
 describe 'Command `init`' do
   current = Dir.pwd

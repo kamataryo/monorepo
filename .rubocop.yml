@@ -6,3 +6,6 @@ Style/TrailingCommaInLiteral:
   
 Metrix/BlockLength:
   Enabled: false
+
+Metrix/MethodLength:
+  Enabled: false

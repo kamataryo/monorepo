@@ -38,7 +38,7 @@ describe 'Command `init`' do
     it 'has jwelbox version information' do
       JwelboxCLI.start(['init'])
       conf = YAML.load_file('./Jwelboxfile')
-      expect(conf['jwelbox']).to eq '0.0.0'
+      expect(conf['jwelbox']).to eq JwelboxCLI::VERSION
     end
 
     it 'has default jwelbox gem location path' do

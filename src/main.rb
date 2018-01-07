@@ -10,6 +10,8 @@ class JwelboxCLI < Thor
     'jwelboxfile.yaml',
   ].freeze
 
+  VERSION = '0.0.0'.freeze
+
   def self.load_config(filename = '')
     config_filenames =
       if filename == ''

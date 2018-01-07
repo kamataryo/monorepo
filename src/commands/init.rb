@@ -8,7 +8,7 @@ class JwelboxCLI
     config_filename = options[:config_filename] || './Jwelboxfile'
 
     default_config = {
-      'jwelbox' => '0.0.0',
+      'jwelbox' => VERSION,
       'gems' => "#{gem_location}/*",
     }
 

@@ -32,3 +32,4 @@ end
 
 require_relative './commands/init'
 require_relative './commands/exec'
+require_relative './commands/rake'

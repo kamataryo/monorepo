@@ -59,6 +59,6 @@ describe 'Command `exec`' do
     Dir.mkdir './my_gems/gem0'
 
     JwelboxCLI.start(['exec', 'ls', '-c', 'my_jwelbox_config'])
-    # finish witout error
+    # TODO: I want to capture STDOUT
   end
 end

@@ -2,8 +2,11 @@ require 'spec_helper'
 require 'tmpdir'
 require 'fileutils'
 require 'thor'
+require 'yaml'
 
-class JwelboxCLI < Thor; end
+class JwelboxCLI < Thor
+  # accept partial definition and isolate testing subcommands
+end
 
 require './src/commands/bootstrap'
 
@@ -23,6 +26,25 @@ describe 'Bootstrap' do
 
   it 'creates configure file' do
     JwelboxCLI.start(['bootstrap'])
-    expect(Dir.exist?('./Jwelboxfile')).to be true
+    expect(File.exist?('./Jwelboxfile')).to be true
+  end
+
+  describe 'configured contents' do
+    it 'has jwelbox version information' do
+      JwelboxCLI.start(['bootstrap'])
+      conf = YAML.load_file('./Jwelboxfile')
+      expect(conf['jwelbox']).to eq '0.0.0'
+    end
+
+    it 'has jwelbox default package location path' do
+      JwelboxCLI.start(['bootstrap'])
+      conf = YAML.load_file('./Jwelboxfile')
+      expect(conf['gems']).to eq 'gems/*'
+    end
+  end
+
+  it 'creates new package folder' do
+    JwelboxCLI.start(['bootstrap'])
+    expect(Dir.exist?('./gems')).to be true
   end
 end

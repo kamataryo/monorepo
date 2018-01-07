@@ -19,8 +19,8 @@ $ ./bin/jwelbox
 Initialize Jwelbox repo.
 
 ```shell
-$ jwelbox init --config_filename ./Jwelboxfile.yml
-$ jwelbox init -c ./Jwelboxfile.yml
+$ jwelbox init --config_filename ./Jwelboxfile
+$ jwelbox init -c ./Jwelboxfile
 $ jwelbox init --gems specified_gem_folder
 $ jwelbox init -g specified_gem_folder
 ```
@@ -28,3 +28,8 @@ $ jwelbox init -g specified_gem_folder
 ## `jwelbox exec`
 
 Exec commands in each package.
+
+```shell
+$ jwelbox exec [command]
+$ jwelbox exec [command] -c ./Jwelboxfile
+```

@@ -1,5 +1,3 @@
-
-
 task :lint do
   system 'bundle exec rubocop'
 end

@@ -3,6 +3,13 @@ rvm:
   - "2.4.0"
   - "2.5.0"
 
+install:
+  - "bundle install"
+
+cache:
+  directories:
+    - "vendor/bundle"
+
 script:
-  - bundle exec rake lint
-  - bundle exec rake spec
+  - "bundle exec rake lint"
+  - "bundle exec rake spec"

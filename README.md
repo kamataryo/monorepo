@@ -14,13 +14,16 @@ $ ./bin/jwelbox
 
 # Commands
 
-## `jwelbox init`
-
-Create a new Jwelbox repo.
-
 ## `jwelbox bootstrap`
 
 Bootstrap the packages in the current Jwelbox repo.
+
+```shell
+$ jwelbox bootstrap --config_filename ./Jwelboxfile.yml
+$ jwelbox bootstrap -c ./Jwelboxfile.yml
+$ jwelbox bootstrap --gems specified_gem_folder
+$ jwelbox bootstrap -g specified_gem_folder
+```
 
 ## `jwelbox exec`
 

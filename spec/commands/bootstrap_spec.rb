@@ -1,7 +1,7 @@
 require 'spec_helper'
 require 'tmpdir'
 require 'fileutils'
-require 'Thor'
+require 'thor'
 
 class JwelboxCLI < Thor; end
 

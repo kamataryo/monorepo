@@ -47,4 +47,18 @@ describe 'Command `exec`' do
     JwelboxCLI.start(['exec', 'touch foo.bar', '-c', 'my_jwelbox_config'])
     expect(File.exist?('./my_gems/gem0/foo.bar')).to be true
   end
+
+  it 'works with bundler option' do
+    config = {
+      'jwelbox' => '0.0.0',
+      'gems' => 'my_gems/*',
+      'bundler' => 'yes',
+    }
+    File.open('./my_jwelbox_config', 'w') { |f| f.write(config.to_yaml) }
+    Dir.mkdir './my_gems'
+    Dir.mkdir './my_gems/gem0'
+
+    JwelboxCLI.start(['exec', 'ls', '-c', 'my_jwelbox_config'])
+    # finish witout error
+  end
 end

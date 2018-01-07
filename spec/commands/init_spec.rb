@@ -58,6 +58,18 @@ describe 'Command `init`' do
       conf = YAML.load_file('./Jwelboxfile')
       expect(conf['gems']).to eq 'specified_gems/*'
     end
+
+    it 'has default bundler option' do
+      JwelboxCLI.start(['init'])
+      conf = YAML.load_file('./Jwelboxfile')
+      expect(conf['bundler']).to eq 'no'
+    end
+
+    it 'has specified bundler option' do
+      JwelboxCLI.start(['init', '--bundler', 'true'])
+      conf = YAML.load_file('./Jwelboxfile')
+      expect(conf['bundler']).to eq 'yes'
+    end
   end
 
   it 'creates new gem folder' do

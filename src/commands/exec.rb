@@ -1,6 +1,7 @@
 class JwelboxCLI
   desc 'exec [command]', 'exec commands at all the jwelbox repo'
   method_option :config_filename, aliases: '-c'
+  method_option :bundler, aliases: '-b'
 
   def exec(command_str)
     config_filename = options[:config_filename] || ''
@@ -20,11 +21,14 @@ class JwelboxCLI
     end
 
     current = Dir.pwd
+    bundler = options[:bundler] || conf['bundler']
+
+    local_command_str = bundler ? "bundle exec #{command_str}" : command_str
 
     subdirs.each do |gem|
       Dir.chdir gem
-      puts "executing `#{command_str}` at #{gem}..."
-      system command_str
+      puts "executing `#{local_command_str}` at #{gem}..."
+      system local_command_str
       Dir.chdir current
     end
   end

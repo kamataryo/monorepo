@@ -1,11 +1,11 @@
 require 'yaml'
 
 class JwelboxCLI
-  desc 'bootstrap', 'bootstrap jwelbox repo'
+  desc 'init', 'init jwelbox repo'
   method_option :gems, aliases: '-g'
   method_option :config_filename, aliases: '-c'
 
-  def bootstrap
+  def init
     gem_location = options[:gems] || 'gems'
     config_filename = options[:config_filename] || './Jwelboxfile'
 

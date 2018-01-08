@@ -1,5 +1,1 @@
-require 'thor'
-
-class MonorepoCLI < Thor
-  VERSION = '0.0.1'.freeze
-end
+$MONOREPO_VERSION = '0.0.1'.freeze

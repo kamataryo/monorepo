@@ -3,7 +3,7 @@ Style/Documentation:
 
 Style/TrailingCommaInLiteral:
   EnforcedStyleForMultiline: consistent_comma
-  
+
 Metrix/BlockLength:
   Enabled: false
 
@@ -11,4 +11,7 @@ Metrix/MethodLength:
   Enabled: false
 
 Metrics/AbcSize:
+  Enabled: false
+
+Metrics/PerceivedComplexity:
   Enabled: false

@@ -2,6 +2,7 @@ require 'thor'
 require_relative './version'
 
 class MonorepoCLI < Thor
+  VERSION = $MONOREPO_VERSION
   CONFIG_FILE_NAME = [
     'Monorepofile',
     'Monorepofile.yml',

@@ -3,16 +3,16 @@ class MonorepoCLI
   method_option :config_filename, aliases: '-c'
   method_option :bundler, aliases: '-b'
 
-  def exec(command_str)
+  def exec(command_str = '')
     config_filename = options[:config_filename] || ''
-    conf = MonorepoCLI.load_config(config_filename)
+    config = MonorepoCLI.load_config(config_filename)
 
-    unless conf
+    unless config
       puts 'no configuration'
       exit! 1
     end
 
-    gems = conf['gems']
+    gems = config['gems']
     subdirs = Dir.glob(gems).select { |o| File.directory?(o) }
 
     if subdirs.empty?
@@ -23,7 +23,7 @@ class MonorepoCLI
     current = Dir.pwd
     bundler =
       options[:bundler] ||
-      %w[YES Y TRUE].include?(conf['bundler'].upcase)
+      %w[YES Y TRUE].include?(config['bundler'].upcase)
 
     local_command_str = bundler ? "bundle exec #{command_str}" : command_str
 

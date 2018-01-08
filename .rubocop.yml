@@ -4,10 +4,10 @@ Style/Documentation:
 Style/TrailingCommaInLiteral:
   EnforcedStyleForMultiline: consistent_comma
 
-Metrix/BlockLength:
+Metrics/BlockLength:
   Enabled: false
 
-Metrix/MethodLength:
+Metrics/MethodLength:
   Enabled: false
 
 Metrics/AbcSize:
@@ -18,3 +18,6 @@ Metrics/PerceivedComplexity:
 
 Metrics/CyclomaticComplexity:
   Enabled: false
+
+AllCops:
+  TargetRubyVersion: 2.2

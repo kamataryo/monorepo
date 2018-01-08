@@ -3,7 +3,8 @@ class MonorepoCLI
   method_option :config_filename, aliases: '-c'
   method_option :bundler, aliases: '-b'
 
-  def exec(command_str = '')
+  def exec(*args)
+    command_str = args.join ' '
     config_filename = options[:config_filename] || ''
     config = MonorepoCLI.load_config(config_filename)
 

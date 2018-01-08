@@ -23,7 +23,6 @@ class MonorepoCLI
       exit! 2
     end
 
-    current = Dir.pwd
     bundler =
       options[:bundler] ||
       %w[YES Y TRUE].include?(config['bundler'].upcase)
@@ -31,10 +30,8 @@ class MonorepoCLI
     local_command_str = bundler ? "bundle exec #{command_str}" : command_str
 
     subdirs.each do |gem|
-      Dir.chdir gem
       puts "executing `#{local_command_str}` at #{gem}..."
-      system local_command_str
-      Dir.chdir current
+      system "cd #{gem} && #{local_command_str}"
     end
   end
 end

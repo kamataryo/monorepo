@@ -1,4 +1,4 @@
 #! /usr/bin/env ruby
 
-require 'monorepo'
+require_relative '../lib/monorepo'
 MonorepoCLI.start(ARGV)

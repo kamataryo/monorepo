@@ -1,1 +1,1 @@
-MONOREPO_VERSION = '0.0.1'.freeze
+MONOREPO_VERSION = '0.0.2'.freeze

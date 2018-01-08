@@ -1,3 +1,5 @@
+require 'yaml'
+
 class MonorepoCLI
   desc 'init', 'init monorepo repo'
   method_option :gems, aliases: '-g'

@@ -21,7 +21,9 @@ class MonorepoCLI
     end
 
     current = Dir.pwd
-    bundler = options[:bundler] || conf['bundler']
+    bundler =
+      options[:bundler] ||
+      %w[YES Y TRUE].include?(conf['bundler'].upcase)
 
     local_command_str = bundler ? "bundle exec #{command_str}" : command_str
 

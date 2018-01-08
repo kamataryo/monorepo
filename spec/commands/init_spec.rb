@@ -3,7 +3,7 @@ require 'tmpdir'
 require 'fileutils'
 require 'yaml'
 
-require './src/main'
+require 'monorepo'
 
 describe 'Command `init`' do
   current = Dir.pwd

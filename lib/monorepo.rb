@@ -1,4 +1,5 @@
 require 'thor'
+require_relative './version'
 
 class MonorepoCLI < Thor
   CONFIG_FILE_NAME = [
@@ -9,8 +10,6 @@ class MonorepoCLI < Thor
     'monorepofile.yml',
     'monorepofile.yaml',
   ].freeze
-
-  VERSION = '0.0.0'.freeze
 
   def self.load_config(filename = '')
     config_filenames =

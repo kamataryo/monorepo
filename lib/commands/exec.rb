@@ -1,5 +1,5 @@
 class MonorepoCLI
-  desc 'exec [command]', 'exec commands at all the monorepo repo'
+  desc 'exec [COMMAND]', 'exec commands at all the monorepo repo'
   method_option :config_filename, aliases: '-c'
   method_option :bundler, aliases: '-b'
 

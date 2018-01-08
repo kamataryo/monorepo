@@ -2,7 +2,7 @@ require 'spec_helper'
 require 'tmpdir'
 require 'fileutils'
 
-require './src/main'
+require 'monorepo'
 
 describe 'Command `exec`' do
   current = Dir.pwd

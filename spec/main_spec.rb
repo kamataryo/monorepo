@@ -1,7 +1,13 @@
 require 'spec_helper'
 require 'tmpdir'
 
-require './src/main'
+require 'monorepo'
+
+RSpec.describe MonorepoCLI do
+  it 'has a version number' do
+    expect(MonorepoCLI::VERSION).not_to be nil
+  end
+end
 
 describe 'Common methods' do
   current = Dir.pwd

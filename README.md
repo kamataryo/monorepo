@@ -1,5 +1,6 @@
 # Monorepo
 
+[![Gem Version](https://badge.fury.io/rb/monorepo.svg)](https://badge.fury.io/rb/monorepo)
 [![Build Status](https://travis-ci.org/kamataryo/monorepo.svg?branch=master)](https://travis-ci.org/kamataryo/monorepo)
 
 Ruby based monolepo management tool like [Lerna](https://lernajs.io/).

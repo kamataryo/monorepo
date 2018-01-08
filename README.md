@@ -30,6 +30,15 @@ $ jwelbox init -g specified_gem_folder
 Exec commands in each package.
 
 ```shell
-$ jwelbox exec [command]
-$ jwelbox exec [command] -c ./Jwelboxfile
+$ jwelbox exec [COMMAND]
+$ jwelbox exec [COMMAND] -c ./Jwelboxfile
+```
+
+## `jwelbox rake`
+
+Run rake task in each package.
+
+```shell
+$ jwelbox rake
+$ jwelbox rake [TASK]
 ```

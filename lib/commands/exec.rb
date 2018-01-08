@@ -31,7 +31,7 @@ class MonorepoCLI
 
     subdirs.each do |gem|
       puts "executing `#{local_command_str}` at #{gem}..."
-      system "cd #{gem} && #{local_command_str}"
+      system "cd #{gem} && pwd && #{local_command_str}"
     end
   end
 end

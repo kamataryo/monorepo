@@ -22,6 +22,7 @@ describe 'Command `rake`' do
     config = {
       'monorepo' => '0.0.0',
       'gems' => 'gems/*',
+      'bundler' => 'no',
     }
     File.open('./monorepofile', 'w') { |f| f.write(config.to_yaml) }
     Dir.mkdir './gems'
@@ -35,6 +36,7 @@ describe 'Command `rake`' do
     config = {
       'monorepo' => '0.0.0',
       'gems' => 'gems/*',
+      'bundler' => 'no',
     }
     File.open('./monorepofile', 'w') { |f| f.write(config.to_yaml) }
     Dir.mkdir './gems'

@@ -22,6 +22,7 @@ describe 'Command `exec`' do
     config = {
       'monorepo' => '0.0.0',
       'gems' => 'gems/*',
+      'bundler' => 'no',
     }
     File.open('./monorepofile', 'w') { |f| f.write(config.to_yaml) }
     Dir.mkdir './gems'
@@ -39,6 +40,7 @@ describe 'Command `exec`' do
     config = {
       'monorepo' => '0.0.0',
       'gems' => 'my_gems/*',
+      'bundler' => 'no',
     }
     File.open('./my_monorepo_config', 'w') { |f| f.write(config.to_yaml) }
     Dir.mkdir './my_gems'

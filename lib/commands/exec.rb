@@ -9,7 +9,8 @@ class MonorepoCLI
     config = MonorepoCLI.load_config(config_filename)
 
     unless config
-      puts 'no configuration'
+      STDERR.print "\e[31m[error]\e[0m no configuration file found.\n"
+      STDERR.print 'run `monorepo init`'
       exit! 1
     end
 
@@ -17,7 +18,8 @@ class MonorepoCLI
     subdirs = Dir.glob(gems).select { |o| File.directory?(o) }
 
     if subdirs.empty?
-      puts 'no gems'
+      STDERR.print "\e[31m[error]\e[0m gem folder `#{gems}` not found.\n"
+      STDERR.print 'run `monorepo init`'
       exit! 2
     end
 

@@ -12,6 +12,11 @@ class MonorepoCLI < Thor
     'monorepofile.yaml',
   ].freeze
 
+  DEFAULT_CONFIG = {
+    'gems' => 'gems/*',
+    'bundler' => 'no',
+  }.freeze
+
   def self.load_config(filename = '')
     config_filenames =
       if filename == ''
@@ -22,7 +27,7 @@ class MonorepoCLI < Thor
 
     config_filenames.each do |config_filename|
       if File.exist?(config_filename)
-        config = YAML.load_file(config_filename)
+        config = DEFAULT_CONFIG.merge YAML.load_file(config_filename)
         return config
       end
     end

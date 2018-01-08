@@ -3,7 +3,10 @@
 [![Gem Version](https://badge.fury.io/rb/monorepo.svg)](https://badge.fury.io/rb/monorepo)
 [![Build Status](https://travis-ci.org/kamataryo/monorepo.svg?branch=master)](https://travis-ci.org/kamataryo/monorepo)
 
-Ruby based monolepo management tool like [Lerna](https://lernajs.io/).
+[under-development] Ruby based monorepo management tool like [Lerna](https://lernajs.io/).
+Monorepo is a single repository which hosts multiple libraries.
+You can arrange and integrate lint, test, release and other workflows with monorepo.
+[Babel](https://babeljs.io/), [ESLint](https://eslint.org/) and other projects likely has plugin ecosystem take monorepo strategy.
 
 ## Installation
 

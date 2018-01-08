@@ -1,11 +1,11 @@
-class JwelboxCLI
-  desc 'init', 'init jwelbox repo'
+class MonorepoCLI
+  desc 'init', 'init monorepo repo'
   method_option :gems, aliases: '-g'
   method_option :config_filename, aliases: '-c'
   method_option :bundler, aliases: '-b'
   def init
     gem_location = options[:gems] || 'gems'
-    config_filename = options[:config_filename] || './Jwelboxfile'
+    config_filename = options[:config_filename] || './Monorepofile'
     bundler =
       if %w[TRUE YES Y].include?((options[:bundler] || '').upcase)
         'yes'
@@ -14,7 +14,7 @@ class JwelboxCLI
       end
 
     default_config = {
-      'jwelbox' => VERSION,
+      'monorepo' => VERSION,
       'gems' => "#{gem_location}/*",
       'bundler' => bundler,
     }

@@ -18,12 +18,12 @@ describe 'Common methods' do
   end
 
   it 'detects no config file' do
-    expect(JwelboxCLI.load_config).to be nil
+    expect(MonorepoCLI.load_config).to be nil
   end
 
-  it 'detects Jwelboxfile' do
-    open('./Jwelboxfile', 'w') { |f| f.write({ 'desc' => 'upper' }.to_yaml) }
-    config = JwelboxCLI.load_config
+  it 'detects Monorepofile' do
+    open('./Monorepofile', 'w') { |f| f.write({ 'desc' => 'upper' }.to_yaml) }
+    config = MonorepoCLI.load_config
     expect(config['desc']).to eq 'upper'
   end
 end

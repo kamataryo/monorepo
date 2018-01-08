@@ -1,13 +1,13 @@
 require 'thor'
 
-class JwelboxCLI < Thor
+class MonorepoCLI < Thor
   CONFIG_FILE_NAME = [
-    'Jwelboxfile',
-    'Jwelboxfile.yml',
-    'Jwelboxfile.yaml',
-    'jwelboxfile',
-    'jwelboxfile.yml',
-    'jwelboxfile.yaml',
+    'Monorepofile',
+    'Monorepofile.yml',
+    'Monorepofile.yaml',
+    'monorepofile',
+    'monorepofile.yml',
+    'monorepofile.yaml',
   ].freeze
 
   VERSION = '0.0.0'.freeze

@@ -1,44 +1,44 @@
-# Jwelbox
-[![Build Status](https://travis-ci.org/kamataryo/jwelbox.svg?branch=master)](https://travis-ci.org/kamataryo/jwelbox)
+# Monorepo
+[![Build Status](https://travis-ci.org/kamataryo/monorepo.svg?branch=master)](https://travis-ci.org/kamataryo/monorepo)
 
 Ruby based monolepo management tool like [Lerna](https://lernajs.io/).
 
 # development
 
 ```shell
-$ git clone git@github.com:kamataryo/jwelbox.git
-$ cd jwelbox
+$ git clone git@github.com:kamataryo/monorepo.git
+$ cd monorepo
 $ bundle install
-$ ./bin/jwelbox
+$ ./bin/monorepo
 ```
 
 # Commands
 
-## `jwelbox init`
+## `monorepo init`
 
-Initialize Jwelbox repo.
+Initialize Monorepo repo.
 
 ```shell
-$ jwelbox init --config_filename ./Jwelboxfile
-$ jwelbox init -c ./Jwelboxfile
-$ jwelbox init --gems specified_gem_folder
-$ jwelbox init -g specified_gem_folder
+$ monorepo init --config_filename ./Monorepofile
+$ monorepo init -c ./Monorepofile
+$ monorepo init --gems specified_gem_folder
+$ monorepo init -g specified_gem_folder
 ```
 
-## `jwelbox exec`
+## `monorepo exec`
 
 Exec commands in each package.
 
 ```shell
-$ jwelbox exec [COMMAND]
-$ jwelbox exec [COMMAND] -c ./Jwelboxfile
+$ monorepo exec [COMMAND]
+$ monorepo exec [COMMAND] -c ./Monorepofile
 ```
 
-## `jwelbox rake`
+## `monorepo rake`
 
 Run rake task in each package.
 
 ```shell
-$ jwelbox rake
-$ jwelbox rake [TASK]
+$ monorepo rake
+$ monorepo rake [TASK]
 ```

@@ -1,11 +1,11 @@
-class JwelboxCLI
-  desc 'exec [command]', 'exec commands at all the jwelbox repo'
+class MonorepoCLI
+  desc 'exec [command]', 'exec commands at all the monorepo repo'
   method_option :config_filename, aliases: '-c'
   method_option :bundler, aliases: '-b'
 
   def exec(command_str)
     config_filename = options[:config_filename] || ''
-    conf = JwelboxCLI.load_config(config_filename)
+    conf = MonorepoCLI.load_config(config_filename)
 
     unless conf
       puts 'no configuration'

@@ -1,5 +1,5 @@
-class JwelboxCLI
-  desc 'rake [command]', 'exec rake task at all the jwelbox repo'
+class MonorepoCLI
+  desc 'rake [command]', 'exec rake task at all the monorepo repo'
   method_option :config_filename, aliases: '-c'
   method_option :bundler, aliases: '-b'
 

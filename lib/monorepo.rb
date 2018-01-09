@@ -35,6 +35,7 @@ class MonorepoCLI < Thor
   end
 end
 
+require_relative './commands/version'
 require_relative './commands/init'
 require_relative './commands/bootstrap'
 require_relative './commands/exec'

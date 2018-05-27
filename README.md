@@ -31,6 +31,7 @@ Or install it yourself as:
 Initialize Monorepo repo.
 
 ```shell
+$ monorepo init
 $ monorepo init --config_filename ./Monorepofile
 $ monorepo init -c ./Monorepofile
 $ monorepo init --gems specified_gem_folder

@@ -3,24 +3,14 @@
 [![Gem Version](https://badge.fury.io/rb/monorepo.svg)](https://badge.fury.io/rb/monorepo)
 [![Build Status](https://travis-ci.org/kamataryo/monorepo.svg?branch=master)](https://travis-ci.org/kamataryo/monorepo)
 
-[under-development] Ruby based monorepo management tool like [Lerna](https://lernajs.io/).
+[under-development] Ruby based simple monorepo management tool like [Lerna](https://lernajs.io/).
 Monorepo is a single repository which hosts multiple libraries.
 You can arrange and integrate lint, test, release and other workflows with monorepo.
 [Babel](https://babeljs.io/), [ESLint](https://eslint.org/) and other projects likely has plugin ecosystem take monorepo strategy.
 
 ## Installation
 
-Add this line to your application's Gemfile:
-
-```ruby
-gem 'monorepo'
-```
-
-And then execute:
-
-    $ bundle
-
-Or install it yourself as:
+Install it yourself as:
 
     $ gem install monorepo
 
@@ -28,7 +18,7 @@ Or install it yourself as:
 
 ## `monorepo init`
 
-Initialize Monorepo repo.
+Initialize Monorepo root repo.
 
 ```shell
 $ monorepo init
@@ -38,18 +28,51 @@ $ monorepo init --gems specified_gem_folder
 $ monorepo init -g specified_gem_folder
 ```
 
+```shell
+# result
+$ tree .
+.
+├── Monorepofile
+└── gems
+```
+
+You can add and arrange any numbers of child gems inside `./gems` folder.
+
+```shell
+$ tree .
+.
+├── Monorepofile
+└── gems
+    ├── gem-a
+    └── gem-b
+```
+
 ## `monorepo exec`
 
-Exec commands in each package.
+Exec commands in each child gems.
 
 ```shell
 $ monorepo exec [COMMAND]
 $ monorepo exec [COMMAND] -c ./Monorepofile
 ```
 
+An example:
+
+```shell
+$ monorepo exec bundle init
+$ tree .
+.
+├── Monorepofile
+└── gems
+    ├── gem-a
+    │   └── Gemfile
+    └── gem-b
+        └── Gemfile
+```
+
 ## `monorepo rake`
 
-Run rake task in each package.
+Run rake task in each child gems.
 
 ```shell
 $ monorepo rake

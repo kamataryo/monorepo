@@ -1,4 +1,6 @@
 class MonorepoCLI
+  EXIT_STATUS_ZERO = 0
+
   desc 'exec [COMMAND]', 'exec commands at all the monorepo repo'
   method_option :config_filename, aliases: '-c'
   method_option :bundler, aliases: '-b'
@@ -32,6 +34,8 @@ class MonorepoCLI
     subdirs.each do |gem|
       puts "executing `#{local_command_str}` at #{gem}..."
       system "cd #{gem} && pwd && #{local_command_str}"
+      status = $CHILD_STATUS
+      exit status.exitstatus unless status.exitstatus == EXIT_STATUS_ZERO
     end
   end
 end

@@ -1,3 +1,4 @@
+require 'english'
 require 'thor'
 require_relative './version'
 

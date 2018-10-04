@@ -1,9 +1,6 @@
 Style/Documentation:
   Enabled: false
 
-Style/TrailingCommaInLiteral:
-  EnforcedStyleForMultiline: consistent_comma
-
 Metrics/BlockLength:
   Enabled: false
 
@@ -21,3 +18,9 @@ Metrics/CyclomaticComplexity:
 
 AllCops:
   TargetRubyVersion: 2.2
+
+Style/TrailingCommaInArrayLiteral:
+  EnforcedStyleForMultiline: consistent_comma
+
+Style/TrailingCommaInHashLiteral:
+  EnforcedStyleForMultiline: consistent_comma

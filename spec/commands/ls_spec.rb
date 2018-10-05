@@ -30,5 +30,7 @@ describe 'Command `ls`' do
 
     MonorepoCLI.start(['ls'])
     # TODO: I want to capture STDOUT
+    MonorepoCLI.start(['list'])
+    # TODO: I want to capture STDOUT
   end
 end

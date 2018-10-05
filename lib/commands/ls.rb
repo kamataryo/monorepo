@@ -26,4 +26,11 @@ class MonorepoCLI
 
     puts subdirs.join("\n")
   end
+
+  desc 'list', 'List all child repositories'
+  method_option :config_filename, aliases: '-c'
+
+  def list
+    self.ls
+  end
 end

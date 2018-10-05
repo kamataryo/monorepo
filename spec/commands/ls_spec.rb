@@ -28,9 +28,14 @@ describe 'Command `ls`' do
     Dir.mkdir './gems'
     Dir.mkdir './gems/gem0'
 
-    MonorepoCLI.start(['ls'])
-    # TODO: I want to capture STDOUT
-    MonorepoCLI.start(['list'])
-    # TODO: I want to capture STDOUT
+    stdout = `monorepo ls`
+    status = $CHILD_STATUS
+    expect(status.exitstatus).to be_zero
+    expect(stdout).to include 'gem0'
+
+    stdout = `monorepo list`
+    status = $CHILD_STATUS
+    expect(status.exitstatus).to be_zero
+    expect(stdout).to include 'gem0'
   end
 end

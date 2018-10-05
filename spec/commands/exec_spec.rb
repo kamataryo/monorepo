@@ -60,8 +60,10 @@ describe 'Command `exec`' do
     Dir.mkdir './my_gems'
     Dir.mkdir './my_gems/gem0'
 
-    MonorepoCLI.start(['exec', 'ls', '-c', 'my_monorepo_config'])
-    # TODO: I want to capture STDOUT
+    stdout = `monorepo exec ls -c my_monorepo_config`
+    status = $CHILD_STATUS
+    expect(status.exitstatus).to be_zero
+    expect(stdout).to include 'gem0'
   end
 
   it 'exits with a non-zero exit status if command fails for any gem' do

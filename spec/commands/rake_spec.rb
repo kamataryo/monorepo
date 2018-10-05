@@ -28,8 +28,10 @@ describe 'Command `rake`' do
     Dir.mkdir './gems'
     Dir.mkdir './gems/gem0'
 
-    MonorepoCLI.start(['rake', '-h'])
-    # TODO: I want to capture STDOUT
+    stdout = `monorepo exec rake -h`
+    status = $CHILD_STATUS
+    expect(status.exitstatus).to be_zero
+    expect(stdout).to include 'rake [-f rakefile]'
   end
 
   it 'executes rake tasks for each gems with bundler option' do
@@ -42,7 +44,9 @@ describe 'Command `rake`' do
     Dir.mkdir './gems'
     Dir.mkdir './gems/gem0'
 
-    MonorepoCLI.start(['rake', '-h', '-b', 'true'])
-    # TODO: I want to capture STDOUT
+    stdout = `monorepo exec rake -h`
+    status = $CHILD_STATUS
+    expect(status.exitstatus).to be_zero
+    expect(stdout).to include 'rake [-f rakefile]'
   end
 end

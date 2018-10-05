@@ -3,6 +3,7 @@ require 'monorepo'
 
 describe 'Command `version`' do
   it 'return gem version' do
-    MonorepoCLI.start(['version'])
+    stdout = `monorepo version`
+    expect(stdout).to include MONOREPO_VERSION
   end
 end

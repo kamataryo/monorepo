@@ -63,4 +63,21 @@ describe 'Command `exec`' do
     MonorepoCLI.start(['exec', 'ls', '-c', 'my_monorepo_config'])
     # TODO: I want to capture STDOUT
   end
+
+  it 'exits with a non-zero exit status if command fails for any gem' do
+    config = {
+      'monorepo' => '0.0.0',
+      'gems' => 'gems/*',
+      'bundler' => 'no',
+    }
+
+    File.open('./monorepofile', 'w') { |f| f.write(config.to_yaml) }
+    %w[./gems ./gems/gem0 ./gems/gem1].each do |dir|
+      Dir.mkdir dir
+    end
+
+    system 'monorepo exec 1/0'
+    status = $CHILD_STATUS
+    expect(status.exitstatus).to_not be_zero
+  end
 end

@@ -3,7 +3,7 @@
 [![Gem Version](https://badge.fury.io/rb/monorepo.svg)](https://badge.fury.io/rb/monorepo)
 [![Build Status](https://travis-ci.org/kamataryo/monorepo.svg?branch=master)](https://travis-ci.org/kamataryo/monorepo)
 
-[under-development] Ruby based simple monorepo management tool like [Lerna](https://lernajs.io/).
+Ruby based simple monorepo management tool like [Lerna](https://lernajs.io/).
 Monorepo is a single repository which hosts multiple libraries.
 You can arrange and integrate lint, test, release and other workflows with monorepo.
 [Babel](https://babeljs.io/), [ESLint](https://eslint.org/) and other projects likely has plugin ecosystem take monorepo strategy.
@@ -12,20 +12,37 @@ You can arrange and integrate lint, test, release and other workflows with monor
 
 Install it yourself as:
 
-    $ gem install monorepo
+```
+$ gem install monorepo
+```
 
-## Usage
+## CLI reference
 
-## `monorepo init`
+### `monorepo init`
 
-Initialize Monorepo root repo.
+Initialize your project for `monorepo`.
 
 ```shell
+$ mkdir project_name
+$ cd project_name
 $ monorepo init
-$ monorepo init --config_filename ./Monorepofile
-$ monorepo init -c ./Monorepofile
-$ monorepo init --gems specified_gem_folder
-$ monorepo init -g specified_gem_folder
+```
+
+Or you can specify some options.
+
+```shell
+# Specify config file name
+$ monorepo init --config_filename ./your_monorepo_config_file
+$ monorepo init -c ./your_monorepo_config_file
+
+# Specify gems directory name
+$ monorepo init --gems specified_gem_dir
+$ monorepo init -g specified_gem_dir
+
+# Specify bundler option to use `bundle exec` or not.
+# with `yes`, `y` or `true`, `bundle exec` are always attached with subcommand execution.
+$ monorepo init -b YES
+$ monorepo init --bundler YES
 ```
 
 ```shell
@@ -36,7 +53,7 @@ $ tree .
 └── gems
 ```
 
-You can add and arrange any numbers of child gems inside `./gems` folder.
+You can add and arrange any numbers of child gems inside `./gems` directory.
 
 ```shell
 $ tree .
@@ -47,13 +64,12 @@ $ tree .
     └── gem-b
 ```
 
-## `monorepo exec`
+### `monorepo exec`
 
 Exec commands in each child gems.
 
 ```shell
 $ monorepo exec [COMMAND]
-$ monorepo exec [COMMAND] -c ./Monorepofile
 ```
 
 An example:
@@ -70,13 +86,30 @@ $ tree .
         └── Gemfile
 ```
 
-## `monorepo rake`
+```shell
+# use bundler option
+$ .monorepo exec -b ls
+executing `bundle exec ls` at gems/gem-a...
+/path/to/monorepo/root/gems/gem-a
+Gemfile Gemfile.lock
+executing `bundle exec ls` at gems/gem-b...
+/path/to/monorepo/root/gems/gem-b
+Gemfile Gemfile.lock
+```
+
+### `monorepo rake`
 
 Run rake task in each child gems.
 
 ```shell
-$ monorepo rake
-$ monorepo rake [TASK]
+$ monorepo rake        # with default rake task
+$ monorepo rake [TASK] # with specified rake task
+```
+
+## Usage
+
+```
+$ monorepo rake spec
 ```
 
 ## Development

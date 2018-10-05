@@ -1,5 +1,5 @@
 class MonorepoCLI
-  desc 'version', 'monorepo version info'
+  desc 'version', 'Display monorepo version information'
   def version
     STDOUT.write "#{VERSION}\n"
   end

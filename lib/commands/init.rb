@@ -1,7 +1,7 @@
 require 'yaml'
 
 class MonorepoCLI
-  desc 'init', 'init monorepo repo'
+  desc 'init', 'Initialize current working directory for monorepo'
   method_option :gems, aliases: '-g'
   method_option :config_filename, aliases: '-c'
   method_option :bundler, aliases: '-b'

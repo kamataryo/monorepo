@@ -1,7 +1,7 @@
 class MonorepoCLI
   EXIT_STATUS_ZERO = 0
 
-  desc 'exec [COMMAND]', 'exec commands at all the monorepo repo'
+  desc 'exec [COMMAND]', 'Execute a command for each child repository'
   method_option :config_filename, aliases: '-c'
   method_option :bundler, aliases: '-b'
 

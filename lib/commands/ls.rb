@@ -1,5 +1,5 @@
 class MonorepoCLI
-  desc 'ls', 'list all repo'
+  desc 'ls', 'List all child repositories'
   method_option :config_filename, aliases: '-c'
 
   def ls
